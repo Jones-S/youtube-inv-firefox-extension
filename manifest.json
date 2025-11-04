@@ -1,0 +1,31 @@
+{
+  "manifest_version": 2,
+  "name": "YouTube to Invidious Redirector",
+  "version": "1.0",
+  "description": "Redirects every youtube link to inv.nadenko",
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "@youtube-invidious",
+      "strict_min_version": "58.0",
+      "data_collection_permissions": {
+        "required": ["none"]
+      }
+    }
+  },
+  "permissions": [
+    "webRequest",
+    "webRequestBlocking",
+    "*://*.youtube.com/*",
+    "*://youtu.be/*"
+  ],
+  "background": {
+    "scripts": ["background.js"]
+  },
+  "browser_action": {
+    "default_icon": "icons/icon.png",
+    "default_title": "Redirect Youtube"
+  },
+    "icons": {
+    "32": "icons/icon.png"
+  }
+}
