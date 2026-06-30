@@ -15,12 +15,20 @@
   "permissions": [
     "webRequest",
     "webRequestBlocking",
+    "clipboardWrite",
     "*://*.youtube.com/*",
-    "*://youtu.be/*"
+    "*://youtu.be/*",
+    "*://inv.nadeko.net/*"
   ],
   "background": {
     "scripts": ["background.js"]
   },
+  "content_scripts": [
+    {
+      "matches": ["*://inv.nadeko.net/watch?*"],
+      "js": ["content.js"]
+    }
+  ],
   "browser_action": {
     "default_icon": "icons/icon.png",
     "default_title": "Redirect Youtube"
